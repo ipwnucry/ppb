@@ -9,13 +9,11 @@ vim.o.softtabstop = 4 -- Number of spaces inserted instead of a TAB character
 vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 vim.opt.number = true -- line numbers
 vim.opt.relativenumber = true -- relative line numbers
+-- Set filetype for GLSL files
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = { "*.fs", "*.vs" },
+    callback = function()
+        vim.bo.filetype = "glsl"
+    end,
+})
 
-
-vim.api.nvim_exec([[
-    set number
-    set relativenumber
-]], false)
-
-vim.cmd [[
-    autocmd BufRead,BufNewFile *.fs,*.vs set filetype=glsl
-]]

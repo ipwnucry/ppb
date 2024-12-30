@@ -5,7 +5,7 @@ return {
     keys =
     {
         {'<leader>ff', "<cmd>Telescope find_files<cr>", desc = "Find file"},
-        {'<leader>fs', "<cmd>Telescope git_files<cr>", desc = "Find git file"},
+        {'<leader>fg', "<cmd>Telescope git_files<cr>", desc = "Find git file"},
         {
             "<leader>fs",
             function()

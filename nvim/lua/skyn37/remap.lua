@@ -1,5 +1,7 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+-- netrw 
+--vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.api.nvim_set_keymap('x', '<leader>[[', '"*y', { noremap = true, silent = true }) -- set copy to clipboard
 
@@ -17,3 +19,10 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     end,
 })
 
+-- Run prettier on the current file
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader>pv",
+    ":silent !npx prettier --write %<CR> | edit!<CR>",
+    { noremap = true, silent = true }
+)

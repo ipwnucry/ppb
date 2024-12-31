@@ -6,6 +6,7 @@ return {
     {
         {'<leader>ff', "<cmd>Telescope find_files<cr>", desc = "Find file"},
         {'<leader>fg', "<cmd>Telescope git_files<cr>", desc = "Find git file"},
+        { '<leader>fl', "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
         {
             "<leader>fs",
             function()
